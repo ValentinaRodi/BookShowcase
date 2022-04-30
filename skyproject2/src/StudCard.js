@@ -1,4 +1,3 @@
-// from lesson
 function StudCard({ name, text }) {
   return (
     <>

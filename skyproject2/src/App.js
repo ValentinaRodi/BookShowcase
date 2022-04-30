@@ -1,28 +1,25 @@
 import './App.css'
-import Book from './book'
-import Hello from './hello'
+import StudCard from './StudCard'
+import StudCardClass from './StudCardClass'
+import MinMaxCard from './minMaxCard'
+import MinMaxInput from './minMaxInput'
 
-const name = "JS for beginners"
-const year = "2018"
-const price = "1000"
-
-const name1 = "React for beginners"
-const year1 = "2019"
-const price1 = "1200"
-
-const name2 = "Vue for beginners"
-const year2 = "2021"
-const price2 = "1500"
+const minValue1 = 1
+const maxValue1 = 10
+const minValue2 = 10
+const maxValue2 = 20
 
 function App() {
   return (
     <div className="App">
-      <Hello />
-      <Book name={name} year={year} price={price} />
-      <Book name={name1} year={year1} price={price1} />
-      <Book name={name2} year={year2} price={price2} />
+      <StudCard text="Студент" name="Олег" />
+      <StudCard text="Препод" name="Евгений" />
+      <StudCard text="Студент" name="Кирилл" />
+      <StudCardClass />
+      <MinMaxCard minValue={minValue1} maxValue={maxValue1} />
+      <MinMaxInput minValue={minValue2} maxValue={maxValue2} />
     </div>
-  );
+  )
 }
 
 export default App
