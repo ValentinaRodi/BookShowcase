@@ -14,7 +14,6 @@ export default class extends React.Component {
   }
     
   incrementUp = () => {
-      
     if (Number(this.state.curCount) < this.props.maxValue) {
       this.setState((prevState) => ({ curCount: Number(prevState.curCount) + 1,}))
     }
