@@ -1,13 +1,4 @@
 
-
-// const incrementUp = (props) => {
-//   props.details.price += 1
-// }
-
-// const incrementDown = (props) => {
-//   props.details.price -= 1
-// }
-
 export default function OrderDetail(props) {
 
     return (
@@ -22,7 +13,7 @@ export default function OrderDetail(props) {
         <button className="addButton" type="button" id={props.id} onClick={props.IncrementQuantityWithPrice}>
           +
         </button>
-        <button className="removeButton" type="button" onClick={props.incrementDown}>
+        <button className="removeButton" type="button" id={props.id} onClick={props.DecrementQuantityWithPrice}>
           -
         </button>
       </div>

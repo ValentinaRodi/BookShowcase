@@ -49,8 +49,6 @@ export default class Order extends React.Component {
     }
   }
 
-  
-
   IncrementQuantityWithPrice = (event) => {
     // eslint-disable-next-line react/no-access-state-in-setstate
     const totalQuantity = this.state.quantity + 1
@@ -81,7 +79,40 @@ export default class Order extends React.Component {
       quantity: totalQuantity,
       details: newDetails 
     })
+  }  
+
+  DecrementQuantityWithPrice = (event) => {
   
+    // eslint-disable-next-line react/no-access-state-in-setstate
+    let totalQuantity = this.state.quantity
+
+    // eslint-disable-next-line react/no-access-state-in-setstate
+    let totalAmount = this.state.amount
+
+    // eslint-disable-next-line react/no-access-state-in-setstate
+    const newDetails = this.state.details.map( (element) => {
+      if(Number(element.id) === Number(event.target.id) && Number(element.quantity > 0 )) {
+        totalQuantity -= 1
+        totalAmount -= element.price
+        return ({
+          id: element.id,
+          productName: element.productName, 
+          price: element.price,
+          quantity: element.quantity - 1
+        })} 
+      return ({
+        id: element.id,
+        productName: element.productName, 
+        price: element.price,
+        quantity: element.quantity
+      })
+    })
+    
+    this.setState({
+      amount: totalAmount, 
+      quantity: totalQuantity,
+      details: newDetails 
+    })
   }  
 
   render() {
@@ -94,8 +125,8 @@ export default class Order extends React.Component {
           price={card.price}
           quantity={card.quantity}
           IncrementQuantityWithPrice={this.IncrementQuantityWithPrice}
+          DecrementQuantityWithPrice={this.DecrementQuantityWithPrice}
           id={card.id}
-          
           />
         ))}
         <div className="clear" />
