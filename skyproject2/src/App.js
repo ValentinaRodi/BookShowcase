@@ -1,12 +1,8 @@
 import './App.css'
-import ReacTimer from './reacTimer'
+import Order from './components/Order'
 
 function App() {
-  return (
-    <div className="App">
-      <ReacTimer /> 
-    </div>
-  )
+  return <Order />
 }
 
 export default App
