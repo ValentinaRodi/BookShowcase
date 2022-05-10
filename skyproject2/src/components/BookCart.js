@@ -1,3 +1,5 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-return-assign */
 import { useState } from 'react'
 import MinMax from './MinMax'
 
@@ -52,6 +54,10 @@ export default function BookCart() {
   const delBook = (e) => {
     setBooks(books.filter(item => +item.id !== +e.target.id))
   }
+
+  const totalQuantity = books.map(item => item.quantity).reduce((prev, curr) => prev + curr, 0)
+  
+  const totalAmount = books.map(item => item.price * item.quantity).reduce((prev, curr) => prev + curr, 0);
  
   return (
     <div className="some">
@@ -79,11 +85,17 @@ export default function BookCart() {
                 />
               </td>
               <td>{book.price * book.quantity}</td>
-              <button type='button' id={book.id} onClick={delBook}>x</button>
+              <button type='button' id={book.id} onClick={delBook}>x</button>  
             </tr>
           ))}
         </tbody>
       </table>
+      <p className="total">
+        Total Quantity : <b>{totalQuantity}</b>
+      </p>
+      <p className="total">
+        Total Price : <b>{totalAmount}</b>
+      </p>
     </div>
   )
 }
