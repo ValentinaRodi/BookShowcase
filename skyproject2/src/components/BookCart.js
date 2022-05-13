@@ -1,7 +1,9 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-return-assign */
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import MinMax from './MinMax'
+import GeneralCart from './GeneralCart'
 
 function booksStub() {
   return [
@@ -54,10 +56,6 @@ export default function BookCart() {
   const delBook = (e) => {
     setBooks(books.filter(item => +item.id !== +e.target.id))
   }
-
-  const totalQuantity = books.map(item => item.quantity).reduce((prev, curr) => prev + curr, 0)
-  
-  const totalAmount = books.map(item => item.price * item.quantity).reduce((prev, curr) => prev + curr, 0);
  
   return (
     <div className="some">
@@ -90,12 +88,11 @@ export default function BookCart() {
           ))}
         </tbody>
       </table>
-      <p className="total">
-        Total Quantity : <b>{totalQuantity}</b>
-      </p>
-      <p className="total">
-        Total Price : <b>{totalAmount}</b>
-      </p>
+      <GeneralCart books={books} />
+      <Link to="/about">About Shop</Link>
+      <div>
+      <Link to="/abo">Error404</Link>
+      </div>
     </div>
   )
 }
