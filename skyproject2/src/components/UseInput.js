@@ -1,9 +1,9 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import { useState } from "react";
+import { useState } from "react"
 
 const useInputRequired = (initial, required) => {
-  const [value, setValue] = useState(initial);
-  const [error, setError] = useState(null);
+  const [value, setValue] = useState(initial)
+  const [error, setError] = useState(null)
 
   return {
     value,

@@ -2,8 +2,10 @@
 /* eslint-disable no-return-assign */
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import MinMax from './MinMax'
+import MinMaxLazy from './MinMaxLazy'
 import GeneralCart from './GeneralCart'
+import Select from './Select'
+import LoginPass from './LoginPass'
 
 function booksStub() {
   return [
@@ -76,10 +78,11 @@ export default function BookCart() {
               <td>{book.title}</td>
               <td>{book.price}</td>
               <td>
-                <MinMax
+                <MinMaxLazy
                   max={book.rest}
                   current={book.quantity}
                   onChange={(quantity) => setQuantity(book.id, quantity)}
+                  onKeyDown={(quantity) => setQuantity(book.id, quantity)}
                 />
               </td>
               <td>{book.price * book.quantity}</td>
@@ -91,8 +94,10 @@ export default function BookCart() {
       <GeneralCart books={books} />
       <Link to="/about">About Shop</Link>
       <div>
-      <Link to="/abo">Error404</Link>
+        <Link to="/abo">Error404</Link>
       </div>
+      <Select/>
+      <LoginPass/>
     </div>
   )
 }
