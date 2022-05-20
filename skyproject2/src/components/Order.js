@@ -1,10 +1,7 @@
-
 import React from 'react'
 
 // eslint-disable-next-line import/no-named-as-default
 import OrderDetail from './OrderDetail'
-
-
 
 export default class Order extends React.Component {
   constructor(props) {

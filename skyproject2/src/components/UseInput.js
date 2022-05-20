@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { useState } from "react"
+import PropTypes from 'prop-types'
 
 const useInputRequired = (initial, required) => {
   const [value, setValue] = useState(initial)
@@ -26,6 +27,11 @@ function UseInput() {
           </form>
         </div>
     )
+}
+
+useInputRequired.propTypes = {
+  initial: PropTypes.string,
+  required: PropTypes.bool,
 }
 
 export default UseInput

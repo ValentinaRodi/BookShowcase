@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 function MinMaxLazy({ min = 1, max, current, onChange }) {
   
   function applyCurrent(num) {
@@ -41,51 +43,15 @@ function MinMaxLazy({ min = 1, max, current, onChange }) {
   )
 }
 
+MinMaxLazy.propTypes = {
+  min: PropTypes.number,
+  max: PropTypes.number.isRequired,
+  current: PropTypes.number.isRequired,
+  onChange: PropTypes.func.isRequired,
+}
+
+MinMaxLazy.defaultProps = {
+  min: 1,
+}
+
 export default MinMaxLazy
-
-// const MinMax = (initial, required) {
-//   // валидация инпута
-//   function applyCurrent(num) {
-//     const validNum = Math.max(min, Math.min(max, num))
-//     onChange(validNum)
-//   }
-
-//   function parseCurrentStr(initial, required) {
-    
-//     // const num = parseInt(e.target.value, 10)
-//     // applyCurrent(Number.isNaN(num) ? min : num)
-    
-//     const [value, setValue] = useState(initial)
-//     const [error, setError] = useState(null)
-
-//     return {
-//       value,
-//       onBlur: e => {
-//         if (required) {
-//           const num = parseInt(e.target.value, 10)
-//           applyCurrent(Number.isNaN(num) ? min : num)
-//         }
-//         else setError(null);
-//       },
-//       onChange: e => setValue(e.target.value),
-//       error
-//     }
-//   }
-
-//   const inc = () => applyCurrent(current + 1)
-//   const dec = () => applyCurrent(current - 1)
-
-//   return (
-//     <div>
-//       <button type="button" onClick={dec} className="removeButton">
-//         -
-//       </button>
-//       <input type="text" value={current} onChange={parseCurrentStr} />
-//       <button type="button" onClick={inc} className="addButton">
-//         +
-//       </button>
-//     </div>
-//   )
-// }
-
-// export default MinMax

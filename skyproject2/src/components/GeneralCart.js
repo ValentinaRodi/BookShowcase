@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 export default function GeneralCart({books}) {
 
     const totalQuantity = books.map(item => item.quantity).reduce((prev, curr) => prev + curr, 0)
@@ -14,4 +16,8 @@ export default function GeneralCart({books}) {
             </p>
         </div> 
     )
+}
+
+GeneralCart.defaultProps = {
+    books: PropTypes.object
 }
