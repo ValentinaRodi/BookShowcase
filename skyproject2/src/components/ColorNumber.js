@@ -30,18 +30,21 @@ function ColorNumber() {
           <div key={num} style={{ width: "40px", height: "40px", background: `${color[i]}` }}>{num}</div>
         ))}   */}
         {number.map( (num) => {
+          let color = ''
           if(num % 2 === 0) {
-            <div key={num} style={{ width: "40px", height: "40px", background: `green` }}>{num}</div>
-          }
-          if(num > 2) { 
-            for(let i = 2; i < num; i+=1) {
+            color = 'green'
+          } else { 
+            for(let i = 1; i < num; i+=1) {
+              color = ''
               if(num % i === 0) {
-                <div key={num} style={{ width: "40px", height: "40px", background: `yellow` }}>{num}</div>
+                color = 'yellow'
               }
             }
-            <div key={num} style={{ width: "40px", height: "40px", background: `red` }}>{num}</div>
+            if(color === '') {
+              color = 'red'
+            } 
           } 
-          return num
+          return (<div key={num} style={{ width: "40px", height: "40px", background: `${color}` }}>{num}</div>)
         })}  
       </div>
     </div>
