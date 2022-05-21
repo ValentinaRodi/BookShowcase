@@ -1,6 +1,18 @@
 function ColorNumber() {
   const number = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
 
+  
+
+
+  // for (let i = 2; i <= 10; i+=1) { // Для всех i...
+
+  //   for (let j = 2; j < i; j+=1) { // проверить, делится ли число..
+  //     if (i % j === 0) return  // не подходит, берём следующее
+  //   }
+
+  //  console.log( i ); // простое число
+  // }
+
   // const color = []
   // const colorNumber = number.map(num => {
   //   if(num % 2 === 0) {
@@ -30,20 +42,26 @@ function ColorNumber() {
           <div key={num} style={{ width: "40px", height: "40px", background: `${color[i]}` }}>{num}</div>
         ))}   */}
         {number.map( (num) => {
+             
           let color = ''
           if(num % 2 === 0) {
             color = 'green'
           } else { 
-            for(let i = 1; i < num; i+=1) {
-              color = ''
+            for(let i = 2; i < num; i+=1) {
               if(num % i === 0) {
                 color = 'yellow'
+                break
+              } else {
+                color = 'red'
               }
-            }
-            if(color === '') {
-              color = 'red'
             } 
+          }
+          if(num === 1) {
+            color = 'yellow'
           } 
+          if(num === 2) {
+            color = 'red'
+          }
           return (<div key={num} style={{ width: "40px", height: "40px", background: `${color}` }}>{num}</div>)
         })}  
       </div>
@@ -52,6 +70,3 @@ function ColorNumber() {
 }
 
 export default ColorNumber
-
-
- 
