@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import MinMaxLazy from './MinMaxLazy'
 import GeneralCart from './GeneralCart'
 import Select from './Select'
-import LoginPass from './LoginPass'
+import ColorNumber from './ColorNumber'
 
 function booksStub() {
   return [
@@ -97,17 +97,8 @@ export default function BookCart() {
         <Link to="/abo">Error404</Link>
       </div>
       <Select/>
-      <LoginPass/>
+      {/* <LoginPass/> */}
+      <ColorNumber/>
     </div>
   )
 }
-
-/* 
-const setquantity = (id, quantity) => {
-	const newbooks = [ ...books ];
-	const productInd = books.findIndex(book => book.id == id);
-	const newProduct = { ...books[productInd] };
-	newProduct.quantity = quantity;
-	newbooks[productInd] = newProduct;
-	setbooks(newbooks);
-} */

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 
 function Sumbit() {
   const [inputField, setInputField] = useState({
@@ -10,11 +11,15 @@ function Sumbit() {
     setInputField(() => ({
       ...inputField,
       [e.target.name]: e.target.value,
-    }));
-  };
+    }))
+  }
+
+  const navigate = useNavigate();
+  function pathHome() {
+    navigate('/home')
+  }
 
   const submitButton = () => {
-    
     if(!/@.com/.test(inputField.login)) {
       alert(`Логин должен быть: example@.com!`)
     
@@ -22,22 +27,10 @@ function Sumbit() {
       alert(`Пароль должен быть больше 6 символов!`)
     
     } else {
-      alert(`Логин: ${inputField.login}  Пароль: ${inputField.password}`)
+      pathHome()
     }
     
   }
-
-  // const validateLogin = () => {
-  //   if (!inputField.login.includes("@") &&  !inputField.login.includes(".com")) {
-  //     alert(`Логин должен быть: example@.com!`)
-  //   }
-  // }
-
-  // const validatePass = () => {
-  //   if (inputField.password.length < 3) {
-  //     alert(`Пароль должен быть больше 6 символов!`)
-  //   }
-  // }
 
   return (
     <div>
@@ -58,8 +51,11 @@ function Sumbit() {
             // onBlur={validatePass}
         />
         <button type="button" onClick={submitButton}>
-            Отправить
+            Войти
         </button>
+        <div>
+          <Link to="/home">Main</Link>
+      </div>
     </div>
   )
 }
