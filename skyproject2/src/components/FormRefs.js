@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link } from "react-router-dom"
+import Square from './Square'
+import TextButton from './TextButton'
 
 class Form extends React.Component {
     constructor(props) {
@@ -61,7 +62,10 @@ class Form extends React.Component {
                     <input type="submit" value="Войти" />
                 </form>
                 <div>
-                    <Link to="/home">Main</Link>
+                    <TextButton />
+                </div>
+                <div>
+                    <Square />
                 </div>
             </div>
         )

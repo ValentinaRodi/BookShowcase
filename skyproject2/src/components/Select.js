@@ -1,10 +1,10 @@
 import { useState } from "react";
 
 export default function FormsReact() {
-    const [value, setValue] = useState();
+    const [value, setValue] = useState()
   
     const handlerChange = (e) => {
-      setValue(e.target.value);
+      setValue(e.target.value)
     };
 
     const fragmentOne = "Роман Льва Николаевича Толстого «Война и мир» писался в 1863-1869 годах. Для ознакомления с основными сюжетными линиями романа, предлагаем учащимся 10 класса и всем, кто интересуется русской литературой, прочитать краткое содержание «Война и мир» по главам и частям онлайн."

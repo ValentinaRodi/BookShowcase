@@ -97,7 +97,6 @@ export default function BookCart() {
         <Link to="/abo">Error404</Link>
       </div>
       <Select/>
-      {/* <LoginPass/> */}
       <ColorNumber/>
     </div>
   )

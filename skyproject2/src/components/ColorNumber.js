@@ -5,11 +5,7 @@ function ColorNumber() {
     <div className="App">
       <h1 style={{ "padding-left": "50px" }}>Number Generator</h1>
       <div style={{ display: "flex", flexWrap: "wrap", width: "350px", paddingLeft: "50px", gap: "2px" }}>
-        {/* {colorNumber.map( (num, i) => (
-          <div key={num} style={{ width: "40px", height: "40px", background: `${color[i]}` }}>{num}</div>
-        ))}   */}
         {number.map( (num) => {
-             
           let color = ''
           if(num % 2 === 0) {
             color = 'green'

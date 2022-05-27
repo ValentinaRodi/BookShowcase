@@ -34,27 +34,25 @@ function Sumbit() {
 
   return (
     <div>
-        <input
-            type="text"
-            name="login"
-            onChange={inputsHandler}
-            placeholder="Логин"
-            value={inputField.login}
-            // onBlur={validateLogin}
-        />
-        <input
-            type="text"
-            name="password"
-            onChange={inputsHandler}
-            placeholder="Пароль"
-            value={inputField.password}
-            // onBlur={validatePass}
-        />
-        <button type="button" onClick={submitButton}>
-            Войти
-        </button>
-        <div>
-          <Link to="/home">Main</Link>
+      <input
+          type="text"
+          name="login"
+          onChange={inputsHandler}
+          placeholder="Логин"
+          value={inputField.login}
+      />
+      <input
+          type="text"
+          name="password"
+          onChange={inputsHandler}
+          placeholder="Пароль"
+          value={inputField.password}
+      />
+      <button type="button" onClick={submitButton}>
+          Войти
+      </button>
+      <div>
+        <Link to="/home">Main</Link>
       </div>
     </div>
   )

@@ -15,7 +15,6 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/home" element={<BookCart />} />
           <Route path="/" element={<Form />} />
-          {/* <Route path="/" element={<LoginPass />} /> */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
