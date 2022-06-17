@@ -1,10 +1,11 @@
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
-import About from './page/About'
-import BookCart from './components/BookCart'
-import NotFound from './page/Error404'
-import Form from './components/FormRefs'
-// import LoginPass from './components/LoginPass'
+import BookDesk from './views/BookDesc'
+import Order from './views/Order'
+import NotFound from './views/E404'
+import Form from './views/Form'
+import UserOrder from './views/UserOrder'
+import OrderReady from './views/OrderReady'
 
 function App() {
 
@@ -12,8 +13,10 @@ function App() {
     <div className="1">
       <div className="App">
         <Routes>
-          <Route path="/about" element={<About />} />
-          <Route path="/home" element={<BookCart />} />
+          <Route path="/about" element={<BookDesk />} />
+          <Route path="/home" element={<Order />} />
+          <Route path="/userOrder" element={<UserOrder />} />
+          <Route path="/orderReady" element={<OrderReady />} />
           <Route path="/" element={<Form />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

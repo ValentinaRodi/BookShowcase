@@ -4,8 +4,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import MinMaxLazy from './MinMaxLazy'
 import GeneralCart from './GeneralCart'
-import Select from './Select'
-import ColorNumber from './ColorNumber'
+import Order from '../views/Order'
 
 function booksStub() {
   return [
@@ -46,6 +45,7 @@ function booksStub() {
     },
   ]
 }
+
 export default function BookCart() {
   const [books, setBooks] = useState(booksStub())
 
@@ -93,11 +93,7 @@ export default function BookCart() {
       </table>
       <GeneralCart books={books} />
       <Link to="/about">About Shop</Link>
-      <div>
-        <Link to="/abo">Error404</Link>
-      </div>
-      <Select/>
-      <ColorNumber/>
+      <Order/>
     </div>
   )
 }

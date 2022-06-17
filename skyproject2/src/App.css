@@ -1,6 +1,4 @@
 .order {
-  background: #e5e5e5;
-  border: 1px solid #d9ebe8;
   padding: 10px;
   margin-top: 20px;
 }
@@ -8,31 +6,75 @@
 .order-detail {
   background: #fff;
   float: left;
-  width: 175px;
+  width: 250px;
   border: 1px solid #8cb0aa;
   border-radius: 6px;
   margin: 10px;
   padding: 10px;
 }
 
-h4 {
-  text-align: center;
+.div {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+}
+
+.div2 {
+  padding-left: 30px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+.text {
+  margin: 0px;
+}
+.input {
+  height: 30px;
+}
+
+.btn1 {
+  margin-top: 10px;
+  margin-right: 5px;
+  height: 30px;
+  background-color: #ffc107;
+  border: 1px solid #ffc107;
+  border-radius: 5px;
+}
+
+.btn2 {
+  margin-top: 10px;
+  height: 30px;
+  background-color: #beddcf;
+  border: 1px solid #beddcf;
+  border-radius: 5px;
+  background-color: #beddcf;
 }
 
 .clear {
   clear: both;
 }
 
-.total {
-  margin: 10px;
+.link {
+  display: block;
+  padding-bottom: 15px;
+  color:#3278fd;
+  border-bottom: 1px solid #8cb0aa;
 }
 
 .addButton {
   float: left;
+  background: #8cb0aa;
+  margin-top: 15px;
 }
 
 .removeButton {
-  float: right;
+  float: left;
+  background:#bb3d50; 
+  margin-top: 15px;
 }
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
@@ -68,10 +110,6 @@ h4 {
   background-color: #f5f5f5;
   margin: 0 40px;
   padding: 20px;
-}
-
-.shopItem-title {
-  text-transform: uppercase;
 }
 
 .shopItem-title {
