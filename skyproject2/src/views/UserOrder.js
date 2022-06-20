@@ -1,26 +1,31 @@
-/* eslint-disable import/named */
-// import { UseContext } from 'react'
-
-import { UserContext } from './Form'
+import { useState, useContext } from 'react'
+import { useNavigate } from "react-router-dom"
+// eslint-disable-next-line import/no-cycle
+// eslint-disable-next-line import/no-cycle
+import OrderReady from './OrderReady'
+import UserContext from '../context/store'
 
 function UserOrder() {
+  const navigate = useNavigate()
+  const book = useContext(UserContext)
+  const [send, setSend] = useState(false)
+
   const Back = () => {
-    window.open('/home')
+    navigate('/home')
   }
 
   const Send = () => {
-    window.open('/orderReady')
+    setSend(true)
   }
 
-  // const userEmail = UseContext(UserContext)
   return (
-    <UserContext.Consumer>
-      {(user) => (
+    <div>
+      {!send ? (
         <div className="div2">
           <h1>Input Data</h1>
           <div className="form">
             <p className="text">Email</p>
-            <input type="text" name="login" className="input" value={user} />
+            <input type="text" name="login" className="input" defaultValue={book} />
             <p className="text">Phone</p>
             <input type="text" name="pass" className="input" />
             <p className="text">Name</p>
@@ -34,9 +39,8 @@ function UserOrder() {
               </button>
             </div>
           </div>
-        </div>
-      )}
-    </UserContext.Consumer>
+        </div> ) : (<OrderReady />) }
+    </div>
   )
 }
 

@@ -2,9 +2,8 @@ import React from 'react'
 
 // eslint-disable-next-line import/no-named-as-default
 import OrderDetail from './OrderDetail'
+// eslint-disable-next-line import/no-cycle
 import UserOrder from './UserOrder'
-
-// const booksContext = {}
 
 const bookSend = []
 
@@ -91,7 +90,7 @@ export default class Order extends React.Component {
                 className="order-detail"
                 onClick={this.onClickButton}
               >
-                Send
+                Next
               </button>
             </div>
           </div>

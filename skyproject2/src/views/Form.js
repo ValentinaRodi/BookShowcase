@@ -1,11 +1,10 @@
 /* eslint-disable no-undef */
 import React from 'react'
-
 import Order from './Order'
-// eslint-disable-next-line import/no-cycle
-// import UserOrder from './UserOrder'
+import UserContext from '../context/store'
 
 class Form extends React.Component {
+  
   constructor(props) {
     super(props)
     this.state = {
@@ -40,10 +39,11 @@ class Form extends React.Component {
       }))
     } else this.setState(() => ({ order: true }))
   }
-
+  
   render() {
     return (
-      <div>
+      <UserContext.Provider value={this.state.login}>
+        <div>
         {!this.state.order ? (
           <form onSubmit={this.handleSubmit}>
             <input
@@ -67,13 +67,16 @@ class Form extends React.Component {
             <input type="submit" value="Войти" />
           </form>
         ) : (
-          <UserContext.Provider value={this.state.login}>
             <Order userEmail={this.state.login} />
-          </UserContext.Provider>
         )}
       </div>
+      </UserContext.Provider>
     )
   }
 }
-export const UserContext = React.createContext('123')
+
+// Form.contextType = UserContext
+
 export default Form
+
+// https://tproger.ru/translations/react-context-in-5-min/
