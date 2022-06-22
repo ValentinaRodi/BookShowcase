@@ -1,18 +1,19 @@
-/* eslint-disable react/prefer-stateless-function */
 import React from 'react'
 
+// eslint-disable-next-line react/prefer-stateless-function
 export default class extends React.Component {
-  constructor(props) {
+    // eslint-disable-next-line no-useless-constructor
+    constructor(props) {
     super(props)
-    console.log ("hi");}
-  
-  render() {
-    return (
-      <div>
-          <h2> {this.props.name} </h2>
-          <p> {this.props.year} </p>
-          <p> {this.props.price} </p>
-      </div>
-      )
-  }
+    }
+
+    render() {
+        return (
+            <div id="book">
+                <h2>{this.props.name}</h2>
+                <p>{this.props.year}</p>
+                <p>{this.props.price}</p>
+            </div>
+        )
+    }
 }
