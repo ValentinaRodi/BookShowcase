@@ -5,10 +5,12 @@ import { useNavigate } from "react-router-dom"
 import OrderReady from './OrderReady'
 import UserContext from '../context/store'
 
-function UserOrder() {
+function UserOrder(props) {
   const navigate = useNavigate()
-  const book = useContext(UserContext)
+  const email = useContext(UserContext)
   const [send, setSend] = useState(false)
+  const [phone, setPhone] = useState()
+  const [name, setName] = useState()
 
   const Back = () => {
     navigate('/home')
@@ -18,6 +20,14 @@ function UserOrder() {
     setSend(true)
   }
 
+  const handleChangePhone = (e) => {
+    setPhone(e.target.value)
+  }
+
+  const handleChangeName = (e) => {
+    setName(e.target.value)
+  }
+
   return (
     <div>
       {!send ? (
@@ -25,11 +35,11 @@ function UserOrder() {
           <h1>Input Data</h1>
           <div className="form">
             <p className="text">Email</p>
-            <input type="text" name="login" className="input" defaultValue={book} />
+            <input type="text" name="login" className="input" defaultValue={email} />
             <p className="text">Phone</p>
-            <input type="text" name="pass" className="input" />
+            <input type="text" name="pass" className="input" value={phone} onChange={handleChangePhone}/>
             <p className="text">Name</p>
-            <input type="text" name="name" className="input" />
+            <input type="text" name="name" className="input" value={name} onChange={handleChangeName}/>
             <div>
               <button type="button" className="btn1" onClick={Back}>
                 Back to cart
@@ -39,7 +49,7 @@ function UserOrder() {
               </button>
             </div>
           </div>
-        </div> ) : (<OrderReady />) }
+        </div> ) : (<OrderReady bookSend={props.bookSend} phone={phone} name={name} email={email}/>) }
     </div>
   )
 }

@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
 
-function MinMax({ min = 1, max, current, onChange }) {
+function MinMax({ min = 1, current, onChange }) {
   // валидация инпута
   function applyCurrent(num) {
-    const validNum = Math.max(min, Math.min(max, num))
+    const validNum = Math.max(min, Math.min( num))
     onChange(validNum)
   }
 
@@ -30,7 +30,6 @@ function MinMax({ min = 1, max, current, onChange }) {
 
 MinMax.propTypes = {
   min: PropTypes.number,
-  max: PropTypes.number.isRequired,
   current: PropTypes.number.isRequired,
   onChange: PropTypes.func.isRequired,
 }

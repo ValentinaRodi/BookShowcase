@@ -1,6 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
 // eslint-disable-next-line import/no-cycle
-// import BookContext from './Order'
 
 const book1 = 'Роман-эпопея Льва Николаевича Толстого, описывающий русское общество в эпоху войн против Наполеона в 1805—1812 годах. Эпилог романа доводит повествование до 1820 года.'
 const book2 = 'Оккультный роман, который впервые вышел в свет спустя почти 35 лет после смерти автора. Этот уникальный текст принадлежит перу К. Е. Антаровой, одной из тех самоотверженных русских женщин, чья жизнь была служением искусству и знанию.'
@@ -12,7 +11,6 @@ const books = [book1, book2, book3, book4, book5]
 
 function BookDesc() {
   const book = useLocation()
-  
   const bookName = book.state?.bookName
   const bookPrice = book.state?.bookPrice
   const bookId = book.state?.bookId
@@ -26,4 +24,5 @@ function BookDesc() {
     </div>
   )
 }
+
 export default BookDesc

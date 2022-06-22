@@ -75,8 +75,4 @@ class Form extends React.Component {
   }
 }
 
-// Form.contextType = UserContext
-
 export default Form
-
-// https://tproger.ru/translations/react-context-in-5-min/
